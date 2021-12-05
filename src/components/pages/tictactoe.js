@@ -10,7 +10,7 @@ export default function Tictactoe() {
   ]);
   const [count, setCount] = useState(0);
   const _handleClick = (row, col) => {
-    if (win != true) {
+    if (win !== true) {
       if (count % 2 === 0) {
         mycheck(row, col, "O", "X");
       } else {
@@ -23,10 +23,10 @@ export default function Tictactoe() {
 
   // my check
   function mycheck(row, col, x, o) {
-    if (state[row][col] == "") {
+    if (state[row][col] === "") {
       state[row][col] = o;
       setCount(count + 1);
-    } else if (state[row][col] == x || state[row][col] == o) {
+    } else if (state[row][col] === x || state[row][col] === o) {
     }
     Checkwin_row(row, col, o);
     Checkwin_col(row, col, o);
@@ -48,17 +48,17 @@ export default function Tictactoe() {
     let right = 0;
     //Check Left
     for (let i = col; i >= 0; i--) {
-      if (state[row][i] == type) left++;
+      if (state[row][i] === type) left++;
       else break;
     }
 
     //Check Right
     for (let i = col; i < 3; i++) {
-      if (state[row][i] == type) right++;
+      if (state[row][i] === type) right++;
       else break;
     }
 
-    if (left == 3 || right == 3) {
+    if (left === 3 || right === 3) {
       setCheckwin(type);
       setWin(!win);
     }
@@ -71,19 +71,19 @@ export default function Tictactoe() {
 
     //Up
     for (let i = row; i >= 0; i--) {
-      if (state[i][col] == type) {
+      if (state[i][col] === type) {
         up++;
       } else break;
     }
 
     //down
     for (let i = row; i < 3; i++) {
-      if (state[i][col] == type) {
+      if (state[i][col] === type) {
         down++;
       } else break;
     }
 
-    if (up === 3 || down == 3) {
+    if (up === 3 || down === 3) {
       setCheckwin(type);
       setWin(!win);
     }
@@ -106,7 +106,7 @@ export default function Tictactoe() {
 
     for (let i = row - 1; i >= 0; i--) {
       leftucount = leftucount - 1;
-      if (state[i][leftucount] == type) {
+      if (state[i][leftucount] === type) {
         leftup++;
       } else break;
     }
@@ -115,7 +115,7 @@ export default function Tictactoe() {
 
     for (let i = row + 1; i < 3; i++) {
       leftdcount = leftdcount - 1;
-      if (state[i][leftdcount] == type) {
+      if (state[i][leftdcount] === type) {
         leftdown++;
       } else break;
     }
@@ -127,24 +127,24 @@ export default function Tictactoe() {
     for (let i = row - 1; i >= 0; i--) {
       rightucount = rightucount + 1;
 
-      if (state[i][rightucount] == type) {
+      if (state[i][rightucount] === type) {
         rightup++;
       } else break;
     }
 
     for (let i = row + 1; i < 3; i++) {
       rightdcount = rightdcount + 1;
-      if (state[i][rightdcount] == type) {
+      if (state[i][rightdcount] === type) {
         rightdown++;
       } else break;
     }
 
-    if (leftup == 2 || leftdown == 2) {
+    if (leftup === 2 || leftdown === 2) {
       setCheckwin(type);
       setWin(!win);
     }
 
-    if (rightup == 2 || rightdown == 2) {
+    if (rightup === 2 || rightdown === 2) {
       setCheckwin(type);
       setWin(!win);
     }
