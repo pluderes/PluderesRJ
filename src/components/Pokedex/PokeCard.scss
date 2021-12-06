@@ -1,0 +1,28 @@
+.PokeCard {
+  height: 300px;
+  border: 1px solid gray;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin: 10px;
+  background: white;
+
+  &__img {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 70%;
+    }
+  }
+
+  &__name {
+  }
+}

@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/common/Navbar";
-import Home from "./components/pages/Home";
+// import Home from "./components/pages/Home";
 import Products from "./components/pages/Products";
 import Services from "./components/pages/Services";
 import SignUp from "./components/pages/SignUp";
 import Tictactoe from "./components/pages/tictactoe";
 import Footer from "./components/common/Footer";
+
+import PokedexMain from "./components/Pokedex/Pokedex.main";
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
       <Router>
         <Navbar></Navbar>
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={PokedexMain} />
           <Route path="/services" exact component={Services} />
           <Route path="/products" exact component={Products} />
           <Route path="/sign-up" exact component={SignUp} />

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const request = axios.create({
-  baseURL: "http://localhost:5005", //change url for different api call
+  baseURL: "https://pokeapi.co/api/v2/", //change url for different api call
   timeout: 25000,
 });
 
